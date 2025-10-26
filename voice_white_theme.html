@@ -1,0 +1,2358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amlak AI Science Teacher - Beautiful White Theme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Beautiful White Theme */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            
+            /* Vibrant Gradients */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes aurora {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10px, 10px); }
+        }
+
+        @keyframes orbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 25px rgba(127, 90, 240, 0.35); }
+            50% { box-shadow: 0 0 45px rgba(67, 56, 202, 0.65); }
+        }
+
+        @keyframes messageIn {
+            0% { opacity: 0; transform: translateY(12px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0; transform: translateX(-30%); }
+            50% { opacity: 0.8; }
+            100% { opacity: 0; transform: translateX(120%); }
+        }
+
+        @keyframes wave {
+            0% { transform: scaleY(0.3); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0.3); }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 50%, #f8f9fa 100%);
+            background-size: 400% 400%;
+            color: var(--text-primary);
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.15), transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(240, 147, 251, 0.12), transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cosmic-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        .cosmic-bg .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .cosmic-bg .orb:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, rgba(102, 126, 234, 0) 70%);
+            animation-duration: 25s;
+        }
+
+        .cosmic-bg .orb:nth-child(2) {
+            width: 350px;
+            height: 350px;
+            bottom: -100px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.3) 0%, rgba(240, 147, 251, 0) 70%);
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        .cosmic-bg .orb:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            right: 10%;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.25) 0%, rgba(79, 172, 254, 0) 70%);
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+
+        .cosmic-bg .orb:nth-child(4) {
+            width: 380px;
+            height: 380px;
+            top: 20%;
+            left: 15%;
+            background: radial-gradient(circle, rgba(250, 112, 154, 0.2) 0%, rgba(250, 112, 154, 0) 70%);
+            animation-duration: 28s;
+            animation-delay: -7s;
+        }
+
+        .cosmic-bg .grid-lines {
+            position: absolute;
+            inset: -10%;
+            background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+            background-size: 120px 120px;
+            filter: blur(0);
+            transform: perspective(900px) rotateX(58deg);
+            opacity: 0.4;
+            animation: gradientShift 30s linear infinite;
+        }
+
+        .app {
+            width: 96vw;
+            max-width: 1400px;
+            height: 95vh;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl), 0 0 80px rgba(102, 126, 234, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        @supports ((-webkit-backdrop-filter: blur(18px)) or (backdrop-filter: blur(18px))) {
+            .app {
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+            }
+        }
+        
+        .app::before {
+            display: none;
+        }
+
+        header {
+            position: relative;
+            padding: clamp(20px, 3vw, 32px);
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(240, 147, 251, 0.08) 100%);
+            grid-column: 1;
+            grid-row: 1;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05));
+            opacity: 1;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .header-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(16px, 4vw, 28px);
+            z-index: 1;
+        }
+
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(10px, 2vw, 14px);
+        }
+
+        .badge {
+            display: none;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .header-meta {
+            display: none;
+        }
+
+        .header-meta span {
+            display: none;
+        }
+
+        .header-visual {
+            display: none;
+        }
+
+        .header-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHVkcmNoZmVqazM0czZweXZuanJwb2M4bG9icDlrd3k1aTF4b2Z1biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o6Ztm0Onl2sN1xGf2/giphy.gif');
+            background-size: cover;
+            background-position: center;
+            filter: saturate(1.35) brightness(0.95);
+            opacity: 0.85;
+            animation: gradientShift 18s linear infinite;
+            z-index: 1;
+        }
+
+        .header-visual::after {
+            content: '';
+            position: absolute;
+            inset: 10%;
+            border: 1px solid rgba(226, 232, 255, 0.18);
+            border-radius: 28px;
+            animation: orbit 22s linear infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .header-visual__halo {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.55), transparent 60%);
+            filter: blur(18px);
+            animation: glowPulse 9s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .header-visual__spark {
+            position: absolute;
+            width: 4px;
+            height: 140%;
+            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shimmer 5s ease-in-out infinite;
+            mix-blend-mode: screen;
+            z-index: 3;
+            left: 18%;
+            top: -20%;
+            transform: rotate(8deg);
+        }
+
+        .header-visual__spark:nth-of-type(2) {
+            animation-delay: 1.5s;
+            left: 44%;
+            top: -15%;
+            transform: rotate(2deg);
+        }
+
+        .header-visual__spark:nth-of-type(3) {
+            animation-delay: 3.2s;
+            left: 68%;
+            top: -25%;
+            transform: rotate(-6deg);
+        }
+
+        .header-visual__spark:nth-of-type(4) {
+            animation-delay: 4.8s;
+            left: 82%;
+            top: -10%;
+            transform: rotate(12deg);
+        }
+
+        .controls {
+            position: relative;
+            padding: clamp(20px, 4vw, 32px);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            align-items: stretch;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+            backdrop-filter: blur(20px);
+            border-top: 2px solid rgba(102, 126, 234, 0.1);
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .controls::before {
+            display: none;
+        }
+
+        .topic-showcase {
+            position: relative;
+            padding: clamp(24px, 5vw, 40px);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(24px, 4vw, 48px);
+            background: var(--bg-secondary);
+            overflow-y: auto;
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .topic-showcase::before {
+            display: none;
+        }
+
+        .topic-showcase__visual {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(102, 126, 234, 0.15);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(10px);
+            flex-shrink: 0;
+        }
+
+        
+        .topic-showcase__visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .topic-showcase__gallery {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: clamp(12px, 2vw, 20px);
+            width: 100%;
+            height: 100%;
+            padding: clamp(18px, 2.8vw, 38px);
+            align-items: center;
+            justify-items: center;
+            opacity: 1;
+            transition: opacity 0.35s ease;
+        }
+
+        .topic-showcase__gallery[data-count="1"] {
+            grid-template-columns: 1fr;
+        }
+
+        .topic-showcase__gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .topic-showcase__visual[data-empty="true"] .topic-showcase__gallery {
+            opacity: 0;
+        }
+
+        .topic-showcase__placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            z-index: 2;
+            color: rgba(226, 232, 255, 0.85);
+            letter-spacing: 0.04em;
+            transition: opacity 0.4s ease;
+        }
+
+        .topic-showcase__placeholder-icon {
+            font-size: clamp(2.8rem, 6vw, 3.8rem);
+        }
+
+        .topic-showcase__placeholder-text {
+            font-size: clamp(0.88rem, 1.4vw, 1rem);
+            line-height: 1.6;
+            color: rgba(203, 213, 225, 0.9);
+            max-width: 260px;
+        }
+
+        .topic-showcase__visual[data-empty="false"] .topic-showcase__placeholder {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .topic-showcase__content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 16px;
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .topic-showcase__eyebrow {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: rgba(129, 140, 248, 0.85);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topic-showcase__eyebrow::before {
+            content: '';
+            width: 42px;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(129, 140, 248, 0.2), rgba(129, 140, 248, 0.8));
+        }
+
+        .topic-showcase__title {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .topic-showcase__summary {
+            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 8px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .topic-showcase__meta {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(14, 116, 144, 0.25);
+            border: 1px solid rgba(45, 212, 191, 0.25);
+            color: rgba(165, 243, 252, 0.95);
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .topic-showcase__content[data-compact="true"] .topic-showcase__summary {
+            font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+        }
+
+        .interaction {
+            display: none;
+        }
+
+        .interaction header {
+            padding: 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+            padding-bottom: clamp(14px, 3vw, 24px);
+        }
+
+        .interaction .controls {
+            border-left: none;
+            border-right: none;
+            padding: 0;
+        }
+
+        .interaction .footer {
+            padding: 0;
+            border-top: 1px solid rgba(148, 163, 184, 0.12);
+            padding-top: clamp(14px, 2.5vw, 22px);
+        }
+
+        button, select {
+            border-radius: 16px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 14px 22px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        button.primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        button.secondary {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        button.ghost {
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--text-primary);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        button:hover:not(:disabled)::before {
+            opacity: 0.15;
+        }
+
+        button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            box-shadow: none;
+            animation: none;
+        }
+
+        select {
+            appearance: none;
+            cursor: pointer;
+            background: white;
+            color: var(--text-primary);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            padding-right: 48px;
+            position: relative;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23667eea' d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        select::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(130deg, rgba(127, 90, 240, 0.12), rgba(56, 189, 248, 0.08));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* Custom dropdown arrow using background gradient */
+        select {
+            background-image:
+                /* Arrow down icon made with gradients */
+                linear-gradient(45deg, transparent 50%, var(--text-secondary) 50%),
+                linear-gradient(135deg, var(--text-secondary) 50%, transparent 50%),
+                /* Gradient background */
+                linear-gradient(135deg, rgba(15, 23, 42, 0.75), rgba(30, 41, 59, 0.7));
+            background-position:
+                calc(100% - 24px) calc(1em + 0px),
+                calc(100% - 18px) calc(1em + 0px),
+                0 0;
+            background-size:
+                6px 6px,
+                6px 6px,
+                100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        select:hover:not(:disabled) {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        select option {
+            background: white;
+            color: var(--text-primary);
+            padding: 14px 18px;
+        }
+
+        .status {
+            grid-column: 1 / -1;
+            justify-self: stretch;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 14px 24px;
+            border-radius: 100px;
+        }
+
+        .status::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .status:not(.disconnected) {
+            background: var(--gradient-success);
+            color: white;
+            box-shadow: 0 4px 16px rgba(79, 172, 254, 0.3);
+        }
+
+        .status:not(.disconnected)::before {
+            background: white;
+            box-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
+        }
+
+        .status.disconnected {
+            background: var(--gradient-secondary);
+            color: white;
+            box-shadow: 0 4px 16px rgba(240, 147, 251, 0.3);
+        }
+
+        .status.disconnected::before {
+            background: white;
+            box-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
+        }
+
+        .meter {
+            position: relative;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            height: 20px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .meter span {
+            position: absolute;
+            inset: 0;
+            width: 0%;
+            border-radius: inherit;
+            background: var(--gradient-primary);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            transition: width 0.1s ease;
+        }
+
+        .conversation {
+            position: relative;
+            flex: 1;
+            min-height: 0;
+            padding: clamp(26px, 5vw, 34px);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            overflow-y: auto;
+            background: rgba(2, 6, 23, 0.65);
+        }
+
+        .conversation::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(79, 70, 229, 0.12), transparent 45%, rgba(15, 118, 110, 0.12));
+            pointer-events: none;
+            opacity: 0.75;
+        }
+
+        .conversation::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .conversation::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .conversation::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.4);
+            border-radius: 999px;
+        }
+
+        .conversation::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.65);
+        }
+
+        .bubble {
+            position: relative;
+            max-width: min(78%, 560px);
+            padding: 18px 22px;
+            border-radius: 22px;
+            line-height: 1.6;
+            backdrop-filter: blur(6px);
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            box-shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.9);
+            animation: messageIn 0.45s ease-out;
+        }
+
+        .bubble::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            width: 14px;
+            height: 14px;
+            bottom: -6px;
+            background: inherit;
+            border-right: 1px solid rgba(148, 163, 184, 0.18);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+            transform: rotate(45deg);
+        }
+
+        .bubble.user {
+            margin-left: auto;
+            background: linear-gradient(135deg, rgba(127, 90, 240, 0.95), rgba(56, 189, 248, 0.9));
+            color: #fff;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .bubble.user::after {
+            right: 24px;
+            left: auto;
+            border-color: rgba(148, 163, 184, 0.1);
+        }
+
+        .bubble.tutor,
+        .bubble.answer,
+        .bubble.resume {
+            align-self: flex-start;
+        }
+
+        .bubble.tutor {
+            border-left: 3px solid rgba(56, 189, 248, 0.55);
+        }
+
+        .bubble.answer {
+            border-left: 3px solid rgba(245, 158, 11, 0.65);
+            background: rgba(30, 64, 175, 0.38);
+        }
+
+        .bubble.resume {
+            font-style: italic;
+            border-left: 3px solid rgba(129, 140, 248, 0.65);
+            color: rgba(209, 213, 219, 0.9);
+            background: rgba(30, 41, 59, 0.6);
+        }
+
+        .bubble.meta {
+            align-self: center;
+            background: rgba(15, 118, 110, 0.2);
+            border: 1px solid rgba(45, 212, 191, 0.25);
+            padding: 10px 20px;
+            color: rgba(203, 213, 225, 0.85);
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+        }
+
+        .bubble.meta::after {
+            display: none;
+        }
+
+        .bubble.image-bubble {
+            padding: 0;
+            border-radius: 26px;
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .bubble.image-bubble::after {
+            display: none;
+        }
+
+        .bubble.image-bubble img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .bubble.image-bubble::before {
+            content: 'Concept visual';
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 6px 12px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 999px;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(226, 232, 255, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.28);
+        }
+
+        .footer {
+            padding: clamp(18px, 4vw, 24px);
+            border-top: 1px solid rgba(148, 163, 184, 0.12);
+            background: rgba(15, 23, 42, 0.75);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .log {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            max-height: 100px;
+            overflow-y: auto;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(248, 250, 252, 0.9);
+            border: 2px solid rgba(102, 126, 234, 0.1);
+            grid-column: 1 / -1;
+        }
+
+        .log::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .log::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 3px;
+        }
+
+        .loading-dots {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .loading-dots span:nth-child(2) { animation-delay: 0.15s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+        .audio-viz {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 26px;
+        }
+
+        .audio-viz span {
+            width: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .audio-viz span:nth-child(1) { animation-delay: 0s; }
+        .audio-viz span:nth-child(2) { animation-delay: 0.1s; }
+        .audio-viz span:nth-child(3) { animation-delay: 0.2s; }
+        .audio-viz span:nth-child(4) { animation-delay: 0.3s; }
+        .audio-viz span:nth-child(5) { animation-delay: 0.4s; }
+
+        @media (max-width: 980px) {
+            .topic-showcase {
+                flex-direction: column;
+                gap: clamp(20px, 4vw, 32px);
+            }
+
+            .topic-showcase__visual {
+                width: min(90%, 450px);
+                min-width: unset;
+            }
+
+            .topic-showcase__content {
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            .topic-showcase__eyebrow {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .topic-showcase__eyebrow::before {
+                display: block;
+            }
+
+            .topic-showcase__eyebrow::after {
+                content: '';
+                width: 42px;
+                height: 1px;
+                background: linear-gradient(90deg, rgba(129, 140, 248, 0.8), rgba(129, 140, 248, 0.2));
+            }
+
+            .status {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: clamp(1.4rem, 6vw, 1.8rem);
+            }
+
+            .controls {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                padding: 18px;
+            }
+
+            .topic-showcase {
+                padding: clamp(20px, 8vw, 28px);
+                gap: clamp(16px, 6vw, 24px);
+            }
+
+            .topic-showcase__visual {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .topic-showcase__title {
+                font-size: clamp(1.4rem, 8vw, 1.9rem);
+            }
+
+            .topic-showcase__summary {
+                font-size: clamp(0.9rem, 4.3vw, 1rem);
+                max-height: 300px;
+            }
+
+            .topic-showcase__eyebrow::before,
+            .topic-showcase__eyebrow::after {
+                width: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cosmic-bg" aria-hidden="true">
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="orb"></span>
+    <span class="grid-lines"></span>
+</div>
+<div class="app">
+    <header>
+        <div class="header-content">
+            <div class="title-block">
+                <span class="badge">Immersive lesson studio</span>
+                <h1>🌟 Amlak AI Science Teacher</h1>
+                <p>Interactive Voice Learning • Life Processes in Plants</p>
+                <p>Step into a living lab where your voice drives discoveries about life processes in plants and beyond.</p>
+                <div class="header-meta">
+                    <span>Interactive voice discovery</span>
+                    <span>AI-crafted science stories</span>
+                    <span>Real-time illustrations</span>
+                </div>
+            </div>
+            <div class="header-visual">
+                <span class="header-visual__halo"></span>
+                <span class="header-visual__spark"></span>
+                <span class="header-visual__spark"></span>
+                <span class="header-visual__spark"></span>
+            </div>
+        </div>
+    </header>
+    <section class="topic-showcase" id="topic-showcase">
+        <div class="topic-showcase__visual" data-empty="true">
+            <div id="topic-visual-gallery" class="topic-showcase__gallery" data-count="0"></div>
+            <div class="topic-showcase__placeholder">
+                <span class="topic-showcase__placeholder-icon">🎨</span>
+                <p class="topic-showcase__placeholder-text">Beautiful illustrations will appear here when you select a topic</p>
+            </div>
+        </div>
+        <div class="topic-showcase__content" id="topic-content-panel" data-compact="false">
+            <span class="topic-showcase__eyebrow">Current Lesson</span>
+            <h2 class="topic-showcase__title" id="topic-title">Choose a topic to begin</h2>
+            <p class="topic-showcase__summary" id="topic-summary">
+                Connect and select a topic to start your interactive learning journey with engaging explanations and beautiful visuals.
+            </p>
+            <div class="topic-showcase__meta" id="topic-meta">✨ Ready to Learn</div>
+        </div>
+    </section>
+    <div class="controls">
+        <button id="connect" class="primary">🚀 Connect</button>
+        <button id="disconnect" class="ghost" disabled>🔌 Disconnect</button>
+        <select id="topic-select" disabled>
+            <option value="">📚 Select a topic…</option>
+        </select>
+        <button id="ask" class="secondary" disabled>🙋 Ask Question</button>
+        <button id="submit-question" class="secondary" disabled>📤 Submit Question</button>
+        <div class="meter" title="Audio Input Level"><span id="level"></span></div>
+        <div class="status disconnected" id="status">Disconnected</div>
+        <div class="log" id="log">System ready • Click Connect to begin</div>
+    </div>
+</div>
+
+<script>
+(() => {
+    const WS_URL = "wss://sciencetutorapi.apilproperties.com/teach_voice";
+
+    const TARGET_RATE = 16000;
+    const PLAYBACK_RATE = 24000;
+
+    const connectBtn = document.getElementById('connect');
+    const disconnectBtn = document.getElementById('disconnect');
+    const topicSelect = document.getElementById('topic-select');
+    const askBtn = document.getElementById('ask');
+    const submitBtn = document.getElementById('submit-question');
+    const conversation = document.getElementById('conversation');
+    const statusEl = document.getElementById('status');
+    const logEl = document.getElementById('log');
+    const levelBar = document.getElementById('level');
+    const topicVisualGallery = document.getElementById('topic-visual-gallery');
+    const topicVisualWrapper = document.querySelector('.topic-showcase__visual');
+    const topicTitleEl = document.getElementById('topic-title');
+    const topicSummaryEl = document.getElementById('topic-summary');
+    const topicMetaEl = document.getElementById('topic-meta');
+    const topicContentPanel = document.getElementById('topic-content-panel');
+
+    const topicsById = new Map();
+
+    const FALLBACK_TOPICS = [
+        { id: 'life_processes_plants__introduction', title: 'Life Processes in Plants', summary: 'Introduction to how plants make and move their own food', order: 0, images: ['/images/image0.png'] },
+        { id: 'life_processes_plants__growth_observation', title: 'Observing Plant Growth', summary: 'Understanding what plants need to grow and change', order: 1, images: ['/images/image1.png'] },
+        { id: 'life_processes_plants__growth_factors', title: 'What Helps Plants Grow?', summary: 'Understanding the factors that contribute to plant growth', order: 2, images: ['/images/image2.png'] },
+        { id: 'life_processes_plants__growth_experiment', title: 'Activity: What Do Plants Need to Grow?', summary: 'Experiment to test the importance of sunlight and water for plant growth', order: 3, images: ['/images/image3.png'] },
+        { id: 'life_processes_plants__vrkshayurveda', title: 'Do You Know?', summary: 'Ancient Indian knowledge about plant science from Vṛkṣāyurveda', order: 4, images: ['/images/image4.png'] },
+        { id: 'life_processes_plants__leaves_factories', title: "LEAVES: THE 'FOOD FACTORIES' OF PLANTS", summary: 'Understanding how leaves produce and store food as starch', order: 5, images: ['/images/image5.png'] },
+        { id: 'life_processes_plants__starch_test', title: 'Activity: Testing for Starch in a Leaf', summary: 'Demonstration to test the presence of starch in leaves using iodine', order: 6, images: ['/images/image6.png'] },
+        { id: 'life_processes_plants__sunlight_investigation', title: 'Activity: Does Sunlight Help in Making Food?', summary: 'Investigation to understand the role of sunlight in food production through photosynthesis', order: 7, images: ['/images/image7.png'] },
+        { id: 'life_processes_plants__colorful_leaves', title: 'Fascinating Fact: Why Are Some Leaves Not Green?', summary: 'Understanding why some leaves have colors other than green and how they still perform photosynthesis', order: 8, images: ['/images/image8.png'] },
+        { id: 'life_processes_plants__air_balance', title: 'Role of Air in the Preparation of Food', summary: 'Understanding how plants maintain air balance and the role of carbon dioxide in photosynthesis', order: 9, images: ['/images/image9.png'] },
+        { id: 'life_processes_plants__co2_experiment', title: 'Activity: Does Carbon Dioxide Help Plants Make Food?', summary: 'Experiment to prove carbon dioxide is essential for photosynthesis', order: 10, images: ['/images/image10.png'] },
+        { id: 'life_processes_plants__oxygen_release', title: 'Do Plants Release Anything During Photosynthesis?', summary: 'Experiment to demonstrate oxygen release during photosynthesis', order: 11, images: ['/images/image11.png'] },
+        { id: 'life_processes_plants__photosynthesis_summary', title: 'PHOTOSYNTHESIS: IN A NUTSHELL', summary: 'Complete summary of photosynthesis process and its components', order: 12, images: ['/images/image12.png'] },
+        { id: 'life_processes_plants__key_points', title: 'Remember', summary: 'Key points to remember about photosynthesis and plant processes', order: 13, images: ['/images/image13.png'] },
+        { id: 'life_processes_plants__assessment_questions', title: 'Assessment Questions - Photosynthesis', summary: 'Multiple choice and assertion-reason questions with detailed explanations', order: 14, images: ['/images/image14.png'] },
+        { id: 'life_processes_plants__stomata_function', title: 'How Do Leaves Exchange Gases During Photosynthesis?', summary: 'Understanding stomata and their role in gas exchange', order: 15, images: ['/images/image15.png'] },
+        { id: 'life_processes_plants__stomata_observation', title: 'Activity: Observing Stomata Under Microscope', summary: 'Practical activity to observe stomata using microscope', order: 16, images: ['/images/image16.png'] },
+        { id: 'life_processes_plants__stomata_definition', title: 'What Are Stomata?', summary: 'Understanding the structure and functions of stomata', order: 17, images: ['/images/image17.png'] },
+        { id: 'life_processes_plants__transport_intro', title: 'TRANSPORT IN PLANTS', summary: 'Understanding plant transport systems and water movement', order: 18, images: ['/images/image18.png'] },
+        { id: 'life_processes_plants__water_transport_experiment', title: 'Activity: How Is Water Transported in Plants?', summary: 'Experiment to demonstrate upward water movement through xylem', order: 19, images: ['/images/image19.png'] }
+    ];
+
+    let ws = null;
+    let globalMuteActive = false;  // Master mute switch - blocks ALL audio when true
+    let audioCtx = null;
+    let playbackCtx = null;
+    let processor = null;
+    let sourceNode = null;
+    let mediaStream = null;
+    let audioQueue = Promise.resolve();
+    let currentSources = [];
+    let awaitingQuestion = false;
+    let activeStreamKind = null;
+    let currentTopic = null;
+    let currentStreamSeq = 0;  // Track which stream is currently valid
+    let expectedStreamSeq = 0; // Track which audio we should accept
+    let rejectAudioUntil = 0;  // Timestamp - reject all audio until this time
+    let allowAudioPlayback = true;  // Master flag - if false, NO audio plays
+    let audioQueueGeneration = 0;  // Increment this to cancel all queued audio
+    let pendingTopicId = null;
+    let pendingTopicTitle = null;
+    let displayedTopicId = null;  // Track which topic's display_text we've already shown
+    let lastTopicImageKey = null;
+
+    const QUESTION_STATE = {
+        IDLE: 'idle',
+        INTERRUPTING: 'interrupting',
+        LISTENING: 'listening',
+        PROCESSING: 'processing',
+        ANSWERING: 'answering'
+    };
+
+    let questionState = QUESTION_STATE.IDLE;
+    let questionRetryCount = 0;
+    const MAX_QUESTION_RETRIES = 3;
+    let questionTimeout = null;
+    let forceStopSentForQuestion = false;
+    let lastForceStopSent = 0;
+
+    const DEFAULT_TOPIC_STATE = {
+        title: topicTitleEl ? topicTitleEl.textContent : 'Choose a topic to begin',
+        summary: topicSummaryEl ? topicSummaryEl.textContent : 'Connect with the lesson engine to see rich explanations here.',
+        meta: topicMetaEl ? topicMetaEl.textContent : 'No lesson active'
+    };
+
+    const topicTypographyBase = {
+        title: null,
+        summary: null,
+        summaryLineRatio: null,
+        meta: null
+    };
+
+    let fitTopicPanelQueued = false;
+    let resizeFitTimeout = null;
+
+    function ensureTopicTypographyBase() {
+        if (!topicTitleEl || !topicSummaryEl) return;
+
+        const previousTitleSize = topicTitleEl.style.fontSize;
+        const previousSummarySize = topicSummaryEl.style.fontSize;
+        const previousSummaryLine = topicSummaryEl.style.lineHeight;
+        const previousMetaSize = topicMetaEl ? topicMetaEl.style.fontSize : null;
+
+        topicTitleEl.style.fontSize = '';
+        topicSummaryEl.style.fontSize = '';
+        topicSummaryEl.style.lineHeight = '';
+        if (topicMetaEl) {
+            topicMetaEl.style.fontSize = '';
+        }
+
+        const titleStyles = window.getComputedStyle(topicTitleEl);
+        const summaryStyles = window.getComputedStyle(topicSummaryEl);
+
+        topicTypographyBase.title = parseFloat(titleStyles.fontSize) || 28;
+
+        const summaryFont = parseFloat(summaryStyles.fontSize) || 18;
+        topicTypographyBase.summary = summaryFont;
+
+        const rawLineHeight = summaryStyles.lineHeight;
+        let lineRatio = null;
+        if (!rawLineHeight || rawLineHeight === 'normal') {
+            lineRatio = 1.6;
+        } else if (rawLineHeight.endsWith('px')) {
+            lineRatio = parseFloat(rawLineHeight) / summaryFont;
+        } else if (rawLineHeight.endsWith('rem')) {
+            const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+            lineRatio = (parseFloat(rawLineHeight) * rootFont) / summaryFont;
+        } else if (rawLineHeight.endsWith('em')) {
+            lineRatio = parseFloat(rawLineHeight);
+        } else {
+            lineRatio = parseFloat(rawLineHeight);
+        }
+
+        if (!lineRatio || Number.isNaN(lineRatio)) {
+            lineRatio = 1.6;
+        }
+        topicTypographyBase.summaryLineRatio = lineRatio;
+
+        if (topicMetaEl) {
+            const metaStyles = window.getComputedStyle(topicMetaEl);
+            topicTypographyBase.meta = parseFloat(metaStyles.fontSize) || 13;
+        }
+
+        topicTitleEl.style.fontSize = previousTitleSize;
+        topicSummaryEl.style.fontSize = previousSummarySize;
+        topicSummaryEl.style.lineHeight = previousSummaryLine;
+        if (topicMetaEl) {
+            topicMetaEl.style.fontSize = previousMetaSize;
+        }
+    }
+
+    function applyTopicScale(scale) {
+        ensureTopicTypographyBase();
+        if (!topicTitleEl || !topicSummaryEl || !topicTypographyBase.title || !topicTypographyBase.summary) {
+            return;
+        }
+
+        const baseTitle = topicTypographyBase.title;
+        const baseSummary = topicTypographyBase.summary;
+        const baseLineRatio = topicTypographyBase.summaryLineRatio || 1.6;
+
+        const minTitle = Math.max(15, baseTitle * 0.4);
+        const minSummary = Math.max(10, baseSummary * 0.35);
+
+        const titleSize = Math.max(minTitle, baseTitle * scale);
+        const summarySize = Math.max(minSummary, baseSummary * scale);
+        const lineRatio = Math.max(1.1, Math.min(1.45, baseLineRatio * Math.min(scale + 0.12, 1.35)));
+
+        topicTitleEl.style.fontSize = `${titleSize}px`;
+        topicSummaryEl.style.fontSize = `${summarySize}px`;
+        topicSummaryEl.style.lineHeight = lineRatio.toFixed(2);
+
+        if (topicMetaEl && topicTypographyBase.meta) {
+            const metaMin = Math.max(10, topicTypographyBase.meta * 0.55);
+            const metaSize = Math.max(metaMin, topicTypographyBase.meta * Math.min(1, scale + 0.05));
+            topicMetaEl.style.fontSize = `${metaSize}px`;
+        }
+    }
+
+    function fitTopicPanel() {
+        fitTopicPanelQueued = false;
+        if (!topicContentPanel) return;
+
+        ensureTopicTypographyBase();
+        if (!topicTypographyBase.title || !topicTypographyBase.summary) return;
+
+        const availableHeight = topicContentPanel.clientHeight;
+        if (!availableHeight) {
+            // Retry once layout settles
+            queueFitTopicPanel();
+            return;
+        }
+
+        applyTopicScale(1);
+
+        if (topicContentPanel.scrollHeight <= availableHeight) {
+            return;
+        }
+
+        let low = 0.25;
+        let high = 1;
+        let best = low;
+
+        for (let i = 0; i < 14; i++) {
+            const mid = (low + high) / 2;
+            applyTopicScale(mid);
+            if (topicContentPanel.scrollHeight <= availableHeight) {
+                best = mid;
+                low = mid;
+            } else {
+                high = mid;
+            }
+        }
+
+        applyTopicScale(best);
+    }
+
+    function queueFitTopicPanel() {
+        if (fitTopicPanelQueued) return;
+        fitTopicPanelQueued = true;
+        requestAnimationFrame(fitTopicPanel);
+    }
+
+    window.addEventListener('resize', () => {
+        if (resizeFitTimeout) {
+            clearTimeout(resizeFitTimeout);
+        }
+        resizeFitTimeout = setTimeout(() => {
+            queueFitTopicPanel();
+        }, 120);
+    });
+
+    window.addEventListener('load', () => {
+        queueFitTopicPanel();
+    });
+
+    function setTopicTitle(text) {
+        if (!topicTitleEl) return;
+        topicTitleEl.textContent = text && text.trim() ? text.trim() : DEFAULT_TOPIC_STATE.title;
+        queueFitTopicPanel();
+    }
+
+    function setTopicSummary(text) {
+        if (!topicSummaryEl) return;
+        const content = text && text.trim() ? text.trim() : DEFAULT_TOPIC_STATE.summary;
+        topicSummaryEl.textContent = content;
+        if (topicContentPanel) {
+            topicContentPanel.dataset.compact = content.length > 420 ? 'true' : 'false';
+        }
+        queueFitTopicPanel();
+    }
+
+    function setTopicMeta(text) {
+        if (!topicMetaEl) return;
+        topicMetaEl.textContent = text && text.trim() ? text.trim() : DEFAULT_TOPIC_STATE.meta;
+        queueFitTopicPanel();
+    }
+
+    function normalizeImageUrl(url) {
+        if (!url || typeof url !== 'string') {
+            return null;
+        }
+        return url.startsWith('/') ? `https://sciencetutorapi.apilproperties.com${url}` : url;
+    }
+
+    function setTopicVisual(images) {
+        if (!topicVisualGallery || !topicVisualWrapper) return;
+
+        const imageList = Array.isArray(images)
+            ? images.filter(Boolean)
+            : (images ? [images] : []);
+        const normalized = imageList
+            .map(normalizeImageUrl)
+            .filter(Boolean);
+
+        if (!normalized.length) {
+            topicVisualGallery.innerHTML = '';
+            topicVisualGallery.dataset.count = '0';
+            topicVisualWrapper.dataset.empty = 'true';
+            lastTopicImageKey = null;
+            queueFitTopicPanel();
+            return;
+        }
+
+        const key = normalized.join('|');
+        if (key === lastTopicImageKey && topicVisualWrapper.dataset.empty === 'false') {
+            return;
+        }
+
+        lastTopicImageKey = key;
+        topicVisualWrapper.dataset.empty = 'true';
+        topicVisualGallery.innerHTML = '';
+        topicVisualGallery.dataset.count = String(normalized.length);
+
+        let pending = normalized.length;
+        const markComplete = () => {
+            pending = Math.max(0, pending - 1);
+            if (pending === 0) {
+                const hasImages = topicVisualGallery.children.length > 0;
+                topicVisualWrapper.dataset.empty = hasImages ? 'false' : 'true';
+                if (!hasImages) {
+                    lastTopicImageKey = null;
+                }
+                queueFitTopicPanel();
+            }
+        };
+
+        normalized.forEach((url) => {
+            const img = document.createElement('img');
+            img.loading = 'lazy';
+            img.alt = 'Topic illustration';
+            img.src = url;
+            img.addEventListener('load', markComplete);
+            img.addEventListener('error', () => {
+                console.warn(`⚠️ Topic visual failed to load: ${url}`);
+                img.remove();
+                topicVisualGallery.dataset.count = String(topicVisualGallery.children.length);
+                markComplete();
+            });
+            topicVisualGallery.appendChild(img);
+        });
+    }
+
+    function mergeTopics(remoteList) {
+        const combined = new Map();
+
+        FALLBACK_TOPICS.forEach((topic) => {
+            combined.set(topic.id, {
+                id: topic.id,
+                title: topic.title,
+                summary: topic.summary,
+                order: topic.order ?? 0,
+                images: Array.isArray(topic.images) ? topic.images.slice() : [],
+            });
+        });
+
+        if (Array.isArray(remoteList)) {
+            remoteList.forEach((topic) => {
+                if (!topic || !topic.id) {
+                    return;
+                }
+
+                const existing = combined.get(topic.id) || { id: topic.id };
+                const merged = {
+                    id: topic.id,
+                    title: topic.title || existing.title || topic.id,
+                    summary: topic.summary || existing.summary || '',
+                    order: topic.order ?? existing.order ?? 0,
+                    images: Array.isArray(topic.images) && topic.images.length
+                        ? topic.images.filter(Boolean)
+                        : (existing.images || []),
+                };
+
+                combined.set(topic.id, merged);
+            });
+        }
+
+        return Array.from(combined.values());
+    }
+
+    function populateTopics(topicList) {
+        if (!topicSelect) {
+            return;
+        }
+
+        topicSelect.innerHTML = '<option value="">📚 Select a topic…</option>';
+        topicsById.clear();
+
+        if (!Array.isArray(topicList) || !topicList.length) {
+            topicSelect.disabled = true;
+            return;
+        }
+
+        const sorted = topicList
+            .slice()
+            .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+        sorted.forEach((topic) => {
+            if (!topic || !topic.id) {
+                return;
+            }
+            topicsById.set(topic.id, topic);
+            const option = document.createElement('option');
+            option.value = topic.id;
+            option.textContent = topic.title || topic.id;
+            topicSelect.appendChild(option);
+        });
+
+        topicSelect.disabled = false;
+        setTopicMeta(`Topics loaded: ${sorted.length} • choose one to start`);
+    }
+
+    function resetTopicShowcase() {
+        setTopicTitle(DEFAULT_TOPIC_STATE.title);
+        setTopicSummary(DEFAULT_TOPIC_STATE.summary);
+        setTopicMeta(DEFAULT_TOPIC_STATE.meta);
+        setTopicVisual(null);
+        queueFitTopicPanel();
+    }
+
+    resetTopicShowcase();
+    populateTopics(FALLBACK_TOPICS);
+
+    function canAskQuestion() {
+        return !!(ws && ws.readyState === WebSocket.OPEN && currentTopic);
+    }
+
+    function setQuestionState(state) {
+        // Clear any existing timeout
+        if (questionTimeout) {
+            clearTimeout(questionTimeout);
+            questionTimeout = null;
+        }
+
+        questionState = state;
+        switch (state) {
+            case QUESTION_STATE.IDLE:
+                awaitingQuestion = false;
+                submitBtn.disabled = true;
+                askBtn.disabled = !canAskQuestion();
+                questionRetryCount = 0;
+                forceStopSentForQuestion = false;
+                lastForceStopSent = 0;
+                allowAudioPlayback = true;
+                break;
+            case QUESTION_STATE.INTERRUPTING:
+                awaitingQuestion = true;
+                askBtn.disabled = true;
+                submitBtn.disabled = true;
+                allowAudioPlayback = false;
+                break;
+            case QUESTION_STATE.LISTENING:
+                awaitingQuestion = true;
+                askBtn.disabled = true;
+                submitBtn.disabled = false;
+                allowAudioPlayback = false;
+                // Set a 30-second timeout to return to IDLE if no speech detected
+                questionTimeout = setTimeout(() => {
+                    console.log('⏱️ Question timeout - returning to IDLE');
+                    // DON'T show timeout message - keep display clean
+                    setQuestionState(QUESTION_STATE.IDLE);
+                    allowAudioPlayback = true;
+                }, 30000);
+                break;
+            case QUESTION_STATE.PROCESSING:
+                awaitingQuestion = false;
+                askBtn.disabled = true;
+                submitBtn.disabled = true;
+                allowAudioPlayback = false;
+                break;
+            case QUESTION_STATE.ANSWERING:
+                awaitingQuestion = false;
+                askBtn.disabled = true;
+                submitBtn.disabled = true;
+                allowAudioPlayback = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    setQuestionState(QUESTION_STATE.IDLE);
+
+    function appendBubble(role, text) {
+        if (!text || !conversation) return;
+        const el = document.createElement('div');
+        el.className = 'bubble';
+        if (role === 'user') {
+            el.classList.add('user');
+        } else if (role === 'answer') {
+            el.classList.add('answer');
+        } else if (role === 'resume') {
+            el.classList.add('resume');
+        } else if (role === 'meta') {
+            el.classList.add('meta');
+        } else {
+            el.classList.add('tutor');
+        }
+        el.textContent = text;
+        conversation.appendChild(el);
+        conversation.scrollTop = conversation.scrollHeight;
+    }
+
+    function appendMeta(text) {
+        appendBubble('meta', text);
+    }
+
+    function appendImage(imageUrl) {
+        if (!imageUrl || !conversation) {
+            return;
+        }
+        const el = document.createElement('div');
+        el.className = 'bubble tutor image-bubble';
+        const img = document.createElement('img');
+
+        // If relative path, prepend backend URL
+        if (imageUrl.startsWith('/')) {
+            img.src = 'https://sciencetutorapi.apilproperties.com' + imageUrl;
+        } else {
+            img.src = imageUrl;
+        }
+
+        img.alt = 'Topic illustration';
+        img.style.maxWidth = '100%';
+        img.style.borderRadius = '8px';
+        img.onerror = () => {
+            console.error(`Failed to load image: ${img.src}`);
+            el.textContent = `⚠️ Image not found: ${imageUrl}`;
+        };
+        el.appendChild(img);
+        conversation.appendChild(el);
+        conversation.scrollTop = conversation.scrollHeight;
+    }
+
+    function updateStatus(text) {
+        statusEl.textContent = text;
+        if (text.toLowerCase().includes('disconnect')) {
+            statusEl.classList.add('disconnected');
+        } else {
+            statusEl.classList.remove('disconnected');
+        }
+    }
+
+    function addLog(msg) {
+        const time = new Date().toLocaleTimeString();
+        logEl.textContent = `[${time}] ${msg}\n` + logEl.textContent;
+    }
+
+    function stopPlaybackQueue() {
+        // INSTANT STOP: All operations are synchronous for zero-delay stopping
+        
+        // 1. Increment generation (instant)
+        audioQueueGeneration++;
+
+        // 2. Reset audio queue (instant)
+        audioQueue = Promise.resolve();
+
+        // 3. Stop all playing sources (synchronous loop, no await)
+        if (currentSources && currentSources.length > 0) {
+            currentSources.forEach(src => {
+                try {
+                    src.stop(0);  // Stop immediately
+                    src.disconnect();
+                } catch (_) {}
+            });
+            currentSources = [];  // Clear array instantly
+        }
+
+        // 4. Clear stream kind (instant)
+        activeStreamKind = null;
+        
+        // 5. Suspend playback context to stop any audio (synchronous)
+        if (playbackCtx && playbackCtx.state === 'running') {
+            playbackCtx.suspend();  // Synchronous operation
+        }
+    }
+
+    function suspendPlayback() {
+        stopPlaybackQueue();
+    }
+
+    function playPCM24k(arrayBuffer) {
+        // CRITICAL: Check mute flag FIRST - before any processing
+        if (globalMuteActive) {
+            return;  // Silently drop audio when muted
+        }
+
+        if (!playbackCtx || playbackCtx.state === 'closed') {
+            playbackCtx = new AudioContext({ sampleRate: PLAYBACK_RATE });
+        }
+        if (playbackCtx.state === 'suspended') {
+            playbackCtx.resume();
+        }
+        const samples = new Int16Array(arrayBuffer);
+        const floatSamples = new Float32Array(samples.length);
+        for (let i = 0; i < samples.length; i++) {
+            floatSamples[i] = samples[i] / 0x8000;
+        }
+        const buffer = playbackCtx.createBuffer(1, floatSamples.length, PLAYBACK_RATE);
+        buffer.copyToChannel(floatSamples, 0, 0);
+
+        // Capture the current generation - this audio belongs to this generation
+        const myGeneration = audioQueueGeneration;
+
+        audioQueue = audioQueue.then(() => new Promise(resolve => {
+            // Check if this audio has been cancelled (generation changed)
+            if (myGeneration !== audioQueueGeneration) {
+                resolve();
+                return;
+            }
+
+            // Check if playback is disabled
+            if (!allowAudioPlayback) {
+                resolve();
+                return;
+            }
+
+            const src = playbackCtx.createBufferSource();
+            src.buffer = buffer;
+            src.connect(playbackCtx.destination);
+            currentSources.push(src);
+            let resolved = false;
+            src.onended = () => {
+                currentSources = currentSources.filter(s => s !== src);
+                if (!resolved) {
+                    resolved = true;
+                    resolve();
+                }
+            };
+            try {
+                src.start();
+            } catch (e) {
+                if (!resolved) {
+                    resolved = true;
+                    resolve();
+                }
+            }
+        }));
+    }
+
+    function handleServerEvent(msg) {
+        switch (msg.type) {
+            case 'topic_list':
+                if (Array.isArray(msg.topics) && msg.topics.length) {
+                    populateTopics(mergeTopics(msg.topics));
+                }
+                break;
+
+            case 'voice_style_ready':
+                addLog('Voice style loaded');
+                break;
+
+            case 'topic_configured':
+            case 'topic_selected':
+                {
+                    const title = (msg.title || (msg.topic && msg.topic.title) || 'Topic loaded');
+                    const id = (msg.topic_id || (msg.topic && msg.topic.id) || null);
+
+                    // Clear any lingering "switching" messages
+                    if (conversation) {
+                        const lastBubble = conversation.lastElementChild;
+                        if (lastBubble && lastBubble.textContent.includes('Switching topic')) {
+                            lastBubble.remove();
+                        }
+                    }
+
+                    // DON'T show meta message - keep display clean
+                    currentTopic = id ? { id, title } : { title };
+                    if (id && pendingTopicId === id) {
+                        pendingTopicId = null;
+                        pendingTopicTitle = null;
+                    }
+
+                    // Reset displayed topic tracker when new topic is selected
+                    displayedTopicId = null;
+                    setTopicTitle(title);
+                    setTopicSummary('Your interactive lesson will unfold momentarily. Listen for the narration while fresh visuals appear here.');
+                    setTopicMeta('Lesson staged • narration begins shortly');
+                    setTopicVisual(null);
+
+                    setQuestionState(QUESTION_STATE.IDLE);
+                    updateStatus('Standing by');
+                }
+                break;
+
+            case 'full_chapter_started':
+                // DON'T show meta messages - keep display clean
+                currentTopic = msg.current_topic;
+                if (pendingTopicId === msg.current_topic.id) {
+                    pendingTopicId = null;
+                    pendingTopicTitle = null;
+                }
+                setTopicMeta('Immersive lesson in progress');
+                setQuestionState(QUESTION_STATE.IDLE);
+                break;
+
+            case 'topic_advanced':
+                // DON'T show meta messages - keep display clean
+                currentTopic = msg.current_topic;
+                if (pendingTopicId === msg.current_topic.id) {
+                    pendingTopicId = null;
+                    pendingTopicTitle = null;
+                }
+                if (msg.current_topic && msg.current_topic.title) {
+                    setTopicTitle(msg.current_topic.title);
+                }
+                setTopicMeta('Exploring a new section');
+                setQuestionState(QUESTION_STATE.IDLE);
+                break;
+
+            case 'full_chapter_completed':
+                // DON'T show meta message - keep display clean
+                currentTopic = null;
+                setTopicMeta('Lesson complete • choose another topic');
+                setTopicSummary('Great exploration! Select another topic to continue your cosmic science journey.');
+                setTopicVisual(null);
+                setQuestionState(QUESTION_STATE.IDLE);
+                break;
+
+            case 'tts_start':
+                activeStreamKind = msg.kind || 'generic';
+                currentStreamSeq = msg.seq || 0;
+                expectedStreamSeq = currentStreamSeq;
+                // CLEAR rejection window AND enable audio playback - new audio stream is starting
+                rejectAudioUntil = 0;
+
+                const metaTopicId = msg.meta && msg.meta.topic_id ? msg.meta.topic_id : null;
+                const metaTopicTitle = msg.meta && msg.meta.topic_title ? msg.meta.topic_title : null;
+                const currentTopicId = currentTopic && currentTopic.id ? currentTopic.id : null;
+                const expectedTopicId = pendingTopicId || currentTopicId;
+
+                const topicMatches = !metaTopicId
+                    ? (pendingTopicId === null)
+                    : (expectedTopicId ? metaTopicId === expectedTopicId : true);
+
+                if (!topicMatches) {
+                    // Silently drop stale topic audio - this is expected during topic switching
+                    // No need to log as this is normal behavior during rapid topic switching
+                    allowAudioPlayback = false;
+                    stopPlaybackQueue();
+                    activeStreamKind = null;
+                    break;
+                }
+
+                console.log('🎵 TTS START:', msg.kind,
+                    '| metaTopic=', metaTopicTitle || metaTopicId || 'unknown',
+                    '| currentTopic=', currentTopic?.title || 'none',
+                    '| pendingTopic=', pendingTopicTitle || pendingTopicId || 'none',
+                    '| match=', topicMatches);
+
+                const kind = activeStreamKind;
+                const inQuestionFlow =
+                    questionState === QUESTION_STATE.INTERRUPTING ||
+                    questionState === QUESTION_STATE.LISTENING ||
+                    questionState === QUESTION_STATE.PROCESSING;
+
+                if (inQuestionFlow && kind !== 'answer') {
+                    console.log(`🚫 Rejecting TTS during question flow: ${kind}`);
+                    allowAudioPlayback = false;
+                    stopPlaybackQueue();
+                    activeStreamKind = null;
+                    // NO rejection window - let answer audio through immediately
+                    const now = Date.now();
+                    if (
+                        questionState === QUESTION_STATE.INTERRUPTING &&
+                        ws &&
+                        ws.readyState === WebSocket.OPEN &&
+                        (now - lastForceStopSent) > 750
+                    ) {
+                        ws.send(JSON.stringify({ cmd: 'force_stop' }));
+                        forceStopSentForQuestion = true;
+                        lastForceStopSent = now;
+                    }
+                    break;
+                }
+
+                if (kind === 'answer') {
+                    // Unmute INSTANTLY for answer audio
+                    globalMuteActive = false;
+                    console.log('⚡ UNMUTED - answer playing');
+
+                    setQuestionState(QUESTION_STATE.ANSWERING);
+                    allowAudioPlayback = true;
+                    submitBtn.disabled = true;
+                    updateStatus('⚡ Answering...');
+
+                    // Resume audio context synchronously (immediate)
+                    if (playbackCtx && playbackCtx.state === 'suspended') {
+                        playbackCtx.resume();  // Instant resume
+                    }
+
+                    // DON'T show answer text - only speak it
+                } else if (kind === 'transition') {
+                    // Transition message - just speak it, don't show it
+                    allowAudioPlayback = true;
+                    submitBtn.disabled = true;
+                    updateStatus('Continuing lesson...');
+                } else if (kind === 'lesson' || kind === 'resume') {
+                    // Unmute for new topic teaching
+                    globalMuteActive = false;
+                    
+                    if (questionState === QUESTION_STATE.ANSWERING) {
+                        setQuestionState(QUESTION_STATE.IDLE);
+                    }
+                    allowAudioPlayback = true;
+                    submitBtn.disabled = true;
+
+                    // Show display_text ONLY for lesson/resume with display_text
+                    // AND only if we haven't already shown it for this topic
+                    const topicId = msg.meta && msg.meta.topic_id;
+                    if (msg.meta && msg.meta.display_text && msg.meta.show_display_text && topicId !== displayedTopicId) {
+                        const summaryText = msg.meta.display_text;
+                        const summaryTitle = (msg.meta.topic_title || (currentTopic && currentTopic.title) || 'Lesson spotlight');
+                        setTopicTitle(summaryTitle);
+                        setTopicSummary(summaryText);
+                        setTopicMeta('⚡ Teaching NOW');
+                        appendBubble('tutor', msg.meta.display_text);
+                        console.log('⚡ New topic displayed instantly');
+
+                        // Show images if available
+                        if (msg.meta.images && msg.meta.images.length > 0) {
+                            setTopicVisual(msg.meta.images);
+                            msg.meta.images.forEach(imageUrl => {
+                                appendImage(imageUrl);
+                            });
+                            console.log(`⚡ ${msg.meta.images.length} image(s) displayed`);
+                        }
+
+                        // Mark this topic as displayed
+                        displayedTopicId = topicId;
+                    } else if (topicId === displayedTopicId) {
+                        console.log('✓ Topic already displayed');
+                    }
+
+                    // DON'T show individual teaching sentences when we have display_text
+                    // The teaching sentences are spoken but not displayed
+                    // This prevents duplicate content on screen
+                } else {
+                    allowAudioPlayback = true;
+                    submitBtn.disabled = true;
+
+                    // For other kinds (welcome, etc.), DON'T show text - only speak it
+                    // Display remains clean with only display_text and images
+                }
+                break;
+
+            case 'tts_end':
+                activeStreamKind = null;
+                if (questionState === QUESTION_STATE.ANSWERING) {
+                    updateStatus('Answer complete');
+                    setQuestionState(QUESTION_STATE.IDLE);
+                } else if (questionState === QUESTION_STATE.IDLE) {
+                    updateStatus('Standing by');
+                }
+                break;
+
+            case 'tts_cancelled':
+                activeStreamKind = null;
+                stopPlaybackQueue();
+                expectedStreamSeq++;
+                updateStatus('Speech interrupted');
+                allowAudioPlayback = false;
+                if (questionState === QUESTION_STATE.IDLE) {
+                    setQuestionState(QUESTION_STATE.IDLE);
+                }
+                break;
+
+            case 'audio_stop':
+                console.log('🛑 AUDIO STOP - Topic change requested');
+                // MASTER KILL SWITCH - disable all audio immediately
+                allowAudioPlayback = false;
+                // Stop all playback and increment generation to cancel ALL queued audio
+                stopPlaybackQueue();
+                activeStreamKind = null;
+                // NO rejection window - backend generation system handles stale audio
+                // New audio will be accepted as soon as tts_start arrives
+                if (msg.reason === 'question_asked') {
+                    setQuestionState(QUESTION_STATE.INTERRUPTING);
+                    forceStopSentForQuestion = true;
+                    lastForceStopSent = Date.now();
+                    updateStatus('Stopping teacher...');
+                } else {
+                    updateStatus('Stopping audio...');
+                }
+                break;
+
+            case 'listening':
+                if (msg.status === 'ready') {
+                    // DON'T show meta message - keep display clean
+                    stopPlaybackQueue();
+                    setQuestionState(QUESTION_STATE.LISTENING);
+                    allowAudioPlayback = false;
+                    updateStatus('Listening...');
+                } else if (msg.status === 'already_listening') {
+                    // DON'T show meta message - keep display clean
+                } else if (msg.status === 'stopped') {
+                    // DON'T show meta message - keep display clean
+                    setQuestionState(QUESTION_STATE.IDLE);
+                    allowAudioPlayback = true;
+                    updateStatus('Standing by');
+                } else if (msg.status === 'waiting') {
+                    // DON'T show meta message - keep display clean
+                    setQuestionState(QUESTION_STATE.LISTENING);
+                    allowAudioPlayback = false;
+                }
+                break;
+
+            case 'student_speech':
+                appendBubble('user', msg.text);
+                break;
+
+            case 'processing_speech':
+                setQuestionState(QUESTION_STATE.PROCESSING);
+                allowAudioPlayback = false;
+                updateStatus('Processing...');
+                break;
+
+            case 'speech_ignored':
+                if (msg.reason === 'not_listening') {
+                    // Silently ignore - user can try again
+                    break;
+                }
+
+                questionRetryCount++;
+                // DON'T show meta messages - keep display clean
+
+                // After max retries, give up and return to IDLE
+                if (questionRetryCount >= MAX_QUESTION_RETRIES) {
+                    // DON'T show error message - keep display clean
+                    setQuestionState(QUESTION_STATE.IDLE);
+                    allowAudioPlayback = true;
+                    updateStatus('Standing by');
+                } else {
+                    setQuestionState(QUESTION_STATE.LISTENING);
+                    allowAudioPlayback = false;
+                    updateStatus('Listening...');
+                }
+                break;
+
+            case 'answer_complete':
+                if (questionState === QUESTION_STATE.ANSWERING) {
+                    updateStatus('Answer complete');
+                    setQuestionState(QUESTION_STATE.IDLE);
+                }
+                break;
+
+            case 'error':
+                // DON'T show error message - keep display clean
+                addLog('Error: ' + msg.message);
+                setQuestionState(QUESTION_STATE.IDLE);
+                allowAudioPlayback = true;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    connectBtn.addEventListener('click', async () => {
+        if (ws) return;
+
+        setTopicMeta('Connecting to mentor…');
+
+        try {
+            mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        } catch (err) {
+            alert('Microphone access denied: ' + err.message);
+            setTopicMeta('Microphone access declined');
+            return;
+        }
+
+        // Create BOTH audio contexts immediately
+        audioCtx = new AudioContext({ sampleRate: TARGET_RATE });
+        playbackCtx = new AudioContext({ sampleRate: PLAYBACK_RATE });
+        console.log('[DEBUG] Created audio contexts - input:', audioCtx.state, 'playback:', playbackCtx.state);
+
+        sourceNode = audioCtx.createMediaStreamSource(mediaStream);
+        processor = audioCtx.createScriptProcessor(4096, 1, 1);
+
+        processor.onaudioprocess = (e) => {
+            const inputData = e.inputBuffer.getChannelData(0);
+            const i16 = new Int16Array(inputData.length);
+            let max = 0;
+            for (let i = 0; i < inputData.length; i++) {
+                const s = Math.max(-1, Math.min(1, inputData[i]));
+                i16[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+                max = Math.max(max, Math.abs(s));
+            }
+            levelBar.style.width = (max * 100) + '%';
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(i16.buffer);
+            }
+        };
+
+        sourceNode.connect(processor);
+        processor.connect(audioCtx.destination);
+
+        ws = new WebSocket(WS_URL);
+        ws.binaryType = 'arraybuffer';
+
+        let pingInterval = null;
+
+        ws.onopen = () => {
+            updateStatus('Connected');
+            connectBtn.disabled = true;
+            disconnectBtn.disabled = false;
+            setQuestionState(QUESTION_STATE.IDLE);
+            addLog('Connected to teacher');
+            setTopicMeta('Connected • select a topic to begin');
+            setTopicTitle(DEFAULT_TOPIC_STATE.title);
+            setTopicSummary(DEFAULT_TOPIC_STATE.summary);
+            setTopicVisual(null);
+
+            // Send ping every 45 seconds to keep connection alive
+            // Increased from 20s to avoid timeout during long TTS generation (15-30s)
+            pingInterval = setInterval(() => {
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify({ cmd: 'ping' }));
+                } else {
+                    clearInterval(pingInterval);
+                }
+            }, 45000);
+        };
+
+        ws.onmessage = (event) => {
+            if (typeof event.data === 'string') {
+                try {
+                    const msg = JSON.parse(event.data);
+                    handleServerEvent(msg);
+                } catch (_) {}
+            } else {
+                // CRITICAL: Check mute FIRST before any audio processing
+                if (globalMuteActive) {
+                    return;  // Drop audio when muted
+                }
+
+                const now = Date.now();
+
+                // MASTER KILL SWITCH - if allowAudioPlayback is false, drop EVERYTHING
+                if (!allowAudioPlayback) {
+                    return;
+                }
+
+                // REJECT audio if we're in the rejection window (after topic change)
+                if (now < rejectAudioUntil) {
+                    return;
+                }
+
+                const inQuestionFlow =
+                    questionState === QUESTION_STATE.INTERRUPTING ||
+                    questionState === QUESTION_STATE.LISTENING ||
+                    questionState === QUESTION_STATE.PROCESSING;
+
+                // Allow audio during ANSWERING state
+                const isAnswering = questionState === QUESTION_STATE.ANSWERING;
+
+                // Don't play audio if we're waiting for user question or in question flow (but DO play during answering)
+                if (!awaitingQuestion && !inQuestionFlow && playbackCtx && playbackCtx.state !== 'closed') {
+                    playPCM24k(event.data);
+                } else if (isAnswering && playbackCtx && playbackCtx.state !== 'closed') {
+                    // Allow answer audio even if context was suspended
+                    playPCM24k(event.data);
+                }
+            }
+        };
+
+        ws.onerror = (err) => {
+            const errorMsg = `WebSocket error: ${err.type || 'unknown'}`;
+            addLog(errorMsg);
+            console.error('WebSocket error details:', err);
+        };
+
+        ws.onclose = (event) => {
+            const reason = event.reason || 'No reason provided';
+            const code = event.code || 'unknown';
+            const wasClean = event.wasClean;
+
+            console.log(`WebSocket closed - Code: ${code}, Reason: ${reason}, Clean: ${wasClean}`);
+
+            // Clear ping interval
+            if (pingInterval) {
+                clearInterval(pingInterval);
+                pingInterval = null;
+            }
+
+            // CRITICAL: Auto-reconnect on Code 1011 (keepalive ping timeout)
+            // This happens when the server is flooded with TTS messages
+            // Instead of showing disconnect error, silently reconnect
+            if (code === 1011 && currentTopic) {
+                console.log('⚡ Auto-reconnecting after ping timeout...');
+                addLog('⚡ Reconnecting...');
+                updateStatus('Reconnecting...');
+                setTopicMeta('Reconnecting to mentor…');
+
+                // Save current topic to restore after reconnection
+                const savedTopic = currentTopic;
+                const savedTopicId = savedTopic && savedTopic.id ? savedTopic.id : null;
+                const savedTopicTitle = savedTopic && savedTopic.title ? savedTopic.title : 'Unknown';
+
+                ws = null;
+
+                // Reconnect after 500ms
+                setTimeout(() => {
+                    console.log(`🔄 Restoring topic: ${savedTopicTitle}`);
+                    connectBtn.click(); // Trigger reconnection
+
+                    // Restore topic after connection established
+                    setTimeout(() => {
+                        if (ws && ws.readyState === WebSocket.OPEN && savedTopicId) {
+                            console.log(`📚 Reselecting topic: ${savedTopicTitle}`);
+                            ws.send(JSON.stringify({
+                                cmd: 'select_topic',
+                                topic_id: savedTopicId
+                            }));
+                            addLog(`📚 Resumed: ${savedTopicTitle}`);
+                        } else {
+                            console.log('ℹ️ Topic restore skipped - missing connection or topic id');
+                        }
+                    }, 1000);
+                }, 500);
+
+                return; // Don't show disconnect UI
+            }
+
+            // Normal disconnect - show UI
+            addLog(`Disconnected - Code: ${code}, Clean: ${wasClean}`);
+            updateStatus('Disconnected');
+            connectBtn.disabled = false;
+            disconnectBtn.disabled = true;
+            topicSelect.disabled = true;
+            setQuestionState(QUESTION_STATE.IDLE);
+            resetTopicShowcase();
+            setTopicMeta('Session disconnected');
+            ws = null;
+        };
+    });
+
+    disconnectBtn.addEventListener('click', () => {
+        if (ws) {
+            ws.close();
+            ws = null;
+        }
+        if (processor) {
+            processor.disconnect();
+            sourceNode.disconnect();
+            processor = null;
+            sourceNode = null;
+        }
+        if (audioCtx) {
+            audioCtx.close();
+            audioCtx = null;
+        }
+        if (mediaStream) {
+            mediaStream.getTracks().forEach(track => track.stop());
+            mediaStream = null;
+        }
+        stopPlaybackQueue();
+        setQuestionState(QUESTION_STATE.IDLE);
+        allowAudioPlayback = false;
+        resetTopicShowcase();
+        setTopicMeta('Session disconnected');
+    });
+
+    topicSelect.addEventListener('change', () => {
+        const topicId = topicSelect.value;
+        if (!topicId) {
+            return;
+        }
+
+        const topicData = topicsById.get(topicId);
+        const topicName = (topicData && topicData.title) || (topicSelect.options[topicSelect.selectedIndex]?.text) || 'Selected topic';
+        console.log('⚡ INSTANT TOPIC SWITCH:', topicName);
+
+        // === INSTANT AUDIO STOP (ALL SYNCHRONOUS) ===
+        // STEP 0: Mute FIRST (instant, before anything else)
+        globalMuteActive = true;
+        
+        // STEP 1: Disable audio playback (instant)
+        allowAudioPlayback = false;
+        
+        // STEP 2: Stop all audio (synchronous, no await)
+        stopPlaybackQueue();
+        
+        // STEP 3: Clear state (instant)
+        activeStreamKind = null;
+        displayedTopicId = null;
+        rejectAudioUntil = 0;
+        audioQueueGeneration++;  // Invalidate ALL queued audio
+        
+        // === UPDATE UI (ALL SYNCHRONOUS) ===
+        setTopicTitle(topicName);
+        if (topicData && topicData.summary) {
+            setTopicSummary(topicData.summary);
+        } else {
+            setTopicSummary('Preparing your next lesson. Visuals will refresh as soon as narration resumes.');
+        }
+        setTopicMeta('Switching topics…');
+        const topicImages = topicData && Array.isArray(topicData.images) ? topicData.images.filter(Boolean) : [];
+        setTopicVisual(topicImages.length ? topicImages : null);
+        
+        // Clear conversation immediately
+        if (conversation) {
+            conversation.innerHTML = '';
+        }
+        
+        setQuestionState(QUESTION_STATE.IDLE);
+        updateStatus('⚡ Switching NOW...');
+
+        if (!ws || ws.readyState !== WebSocket.OPEN) {
+            updateStatus('Connect to begin the lesson');
+            pendingTopicId = topicId;
+            pendingTopicTitle = topicName;
+            globalMuteActive = false;  // Unmute if not connected
+            return;
+        }
+
+        pendingTopicId = topicId;
+        pendingTopicTitle = topicName;
+
+        // === SEND COMMANDS (AFTER audio is already stopped) ===
+        ws.send(JSON.stringify({ cmd: 'force_stop' }));
+        ws.send(JSON.stringify({ cmd: 'select_topic', topic_id: topicId }));
+
+        console.log('⚡ Topic switched instantly - waiting for new audio');
+        // globalMuteActive will be cleared when tts_start arrives for new topic
+    });
+
+    askBtn.addEventListener('click', () => {
+        if (!ws || ws.readyState !== WebSocket.OPEN) return;
+
+        console.log('⚡ INSTANT QUESTION MODE');
+
+        // === INSTANT AUDIO STOP (ALL SYNCHRONOUS - NO DELAYS) ===
+        // STEP 0: Mute (instant)
+        globalMuteActive = true;
+
+        // STEP 1: Disable playback (instant)
+        allowAudioPlayback = false;
+
+        // STEP 2: Stop ALL audio (synchronous)
+        stopPlaybackQueue();
+
+        // STEP 3: Clear state (instant)
+        activeStreamKind = null;
+        rejectAudioUntil = 0;
+        audioQueueGeneration++;  // Invalidate queued audio
+
+        // === UPDATE UI (SYNCHRONOUS) ===
+        setQuestionState(QUESTION_STATE.LISTENING);
+        updateStatus('⚡ Listening NOW!');
+
+        // === SEND COMMAND (AFTER everything is stopped) ===
+        ws.send(JSON.stringify({ cmd: 'ask_question' }));
+
+        console.log('⚡ Instant stop complete - listening for question');
+    });
+
+    submitBtn.addEventListener('click', () => {
+        if (!ws || ws.readyState !== WebSocket.OPEN) return;
+        setQuestionState(QUESTION_STATE.PROCESSING);
+        ws.send(JSON.stringify({ cmd: 'process_audio' }));
+        allowAudioPlayback = false;
+        updateStatus('Processing question...');
+    });
+})();
+</script>
+</body>
+</html>

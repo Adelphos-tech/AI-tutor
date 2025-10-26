@@ -1,0 +1,23 @@
+{
+  "name": "amlak-ai-science-teacher",
+  "version": "1.0.0",
+  "description": "Interactive voice-based learning platform for science education",
+  "main": "voice_white_theme.html",
+  "scripts": {
+    "start": "npx serve . -l 8000",
+    "dev": "npx serve . -l 8000",
+    "serve": "python3 start_server.py"
+  },
+  "keywords": [
+    "education",
+    "ai",
+    "voice",
+    "learning",
+    "science",
+    "interactive"
+  ],
+  "author": "AI Science Teacher Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
