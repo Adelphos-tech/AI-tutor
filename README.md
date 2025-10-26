@@ -1,5 +1,10 @@
 # ✦ AI Science Learning Platform
 
+[![GitHub](https://img.shields.io/badge/GitHub-Adelphos--tech%2FAI--tutor-blue?logo=github)](https://github.com/Adelphos-tech/AI-tutor)
+[![Version](https://img.shields.io/badge/version-2.0-gold)](https://github.com/Adelphos-tech/AI-tutor)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Status](https://img.shields.io/badge/status-Production%20Ready-brightgreen)](https://github.com/Adelphos-tech/AI-tutor)
+
 > **Two Premium Experiences - One Powerful Platform**
 
 An advanced voice-based interactive learning system featuring two distinct designs:
@@ -7,6 +12,8 @@ An advanced voice-based interactive learning system featuring two distinct desig
 - **🌟 Amlak AI Science Teacher** (Classic White Theme) - Bright, friendly educational interface
 
 Both versions offer the same powerful AI voice interaction technology with different visual aesthetics.
+
+**🌐 Live Demo**: [Try Nexus Scholar AI](https://github.com/Adelphos-tech/AI-tutor)
 
 ## 🎨 Choose Your Experience
 
@@ -183,17 +190,37 @@ The application uses CSS custom properties for easy theming:
 - Close other bandwidth-intensive applications
 - Try refreshing the connection
 
-## 📝 License
-
-This project is part of an educational initiative focused on interactive learning.
-
 ## 🤝 Contributing
 
-This is an educational tool. For suggestions or improvements, please reach out to the development team.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📧 Support
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-For technical support or questions about the content, please contact the educational team.
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+This is an educational initiative focused on interactive learning.
+
+## 🙏 Acknowledgments
+
+- Voice Technology: Advanced TTS/STT Integration
+- Educational Content: Curated Science Curriculum
+- Design Inspiration: Modern premium web applications
+- Community: Thanks to all contributors
+
+## 📧 Contact
+
+- **GitHub**: [@Adelphos-tech](https://github.com/Adelphos-tech)
+- **Repository**: [AI-tutor](https://github.com/Adelphos-tech/AI-tutor)
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if this project helped you!
 
 ---
 
