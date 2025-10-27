@@ -305,7 +305,7 @@
 
         header {
             position: relative;
-            padding: clamp(12px, 2vw, 20px);
+            padding: clamp(8px, 1.5vw, 14px);
             overflow: hidden;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
             grid-column: 1;
@@ -343,7 +343,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: clamp(8px, 1.5vw, 12px);
+            gap: clamp(4px, 1vw, 8px);
             z-index: 1;
         }
 
@@ -351,18 +351,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: clamp(6px, 1vw, 10px);
+            gap: clamp(4px, 0.8vw, 6px);
         }
 
         .badge {
             display: inline-block;
-            padding: 8px 20px;
+            padding: 4px 14px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(16, 185, 129, 0.1));
             border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 999px;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             font-weight: 600;
             color: rgba(244, 228, 193, 0.95);
             box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
@@ -370,9 +370,9 @@
         }
 
         h1 {
-            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-size: clamp(1.3rem, 2.2vw, 1.7rem);
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.1;
             background: var(--gradient-primary);
             background-size: 200% 200%;
             -webkit-background-clip: text;
@@ -385,10 +385,11 @@
         }
 
         header p {
-            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+            font-size: clamp(0.7rem, 1.3vw, 0.85rem);
             color: var(--text-secondary);
             font-weight: 500;
             text-align: center;
+            line-height: 1.3;
             animation: fadeIn 1s ease-out 0.5s both;
         }
 
@@ -482,10 +483,10 @@
 
         .controls {
             position: relative;
-            padding: clamp(24px, 4vw, 36px);
+            padding: clamp(16px, 3vw, 24px);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 18px;
+            gap: 14px;
             align-items: stretch;
             background: linear-gradient(180deg, rgba(19, 24, 41, 0.95), rgba(10, 14, 26, 0.95));
             backdrop-filter: blur(20px);
@@ -500,12 +501,12 @@
 
         .topic-showcase {
             position: relative;
-            padding: clamp(28px, 5vw, 48px);
+            padding: clamp(18px, 3vw, 32px);
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: clamp(28px, 4vw, 56px);
+            gap: clamp(20px, 3vw, 40px);
             background: var(--bg-secondary);
             overflow-y: auto;
             grid-column: 1;
@@ -622,7 +623,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            gap: 16px;
+            gap: 10px;
             flex: 1;
             min-width: 0;
             text-align: left;
@@ -630,13 +631,13 @@
         }
 
         .topic-showcase__eyebrow {
-            font-size: 0.82rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             color: rgba(212, 175, 55, 0.9);
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             font-weight: 600;
         }
 
@@ -648,17 +649,17 @@
         }
 
         .topic-showcase__title {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.25;
             color: var(--text-primary);
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
 
         .topic-showcase__summary {
-            font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-            line-height: 1.6;
+            font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+            line-height: 1.5;
             color: var(--text-secondary);
             max-height: 300px;
             overflow-y: auto;
@@ -670,12 +671,12 @@
         .topic-showcase__meta {
             display: inline-flex;
             align-items: center;
-            padding: 12px 22px;
+            padding: 8px 16px;
             border-radius: 999px;
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.12));
             border: 1px solid rgba(16, 185, 129, 0.35);
             color: rgba(167, 243, 208, 0.95);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             font-weight: 600;
